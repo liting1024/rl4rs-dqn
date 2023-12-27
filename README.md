@@ -1,3 +1,9 @@
+# rl4rs-dqn
+本仓库为sysu-ssse强化学习课程大作业
+尝试在Transformer前添加LSTM，BiLSTM。。。
+
+> 以下为[原仓库](https://github.com/chenhch8/rl4rs-dqn) Readme文件内容
+
 # BigData2021-Reinforcement-Learning-based-Recommender-System-Challenge
 
 Our project structure is as follows:
@@ -52,4 +58,4 @@ Run the following shell to obtain the `submission.csv` based on the above `test_
 ```
 sh upload.sh --pred_file output/test_result.json
 ```
-# rl4rs-dqn
+
