@@ -1,0 +1,13 @@
+lstm_hidden = 7
+self.rnn = nn.Sequential(
+    nn.LSTM(
+        input_size=hidden_size,
+        hidden_size=lstm_hidden,
+        num_layers=1,
+        bidirectional=True,  # 双LSTM
+        batch_first=True  # 指示第一维是batch
+    )
+)
+self.rnn_linear = nn.Linear(in_features=lstm_hidden*2, out_features=7)
+duel = 0
+2438759    6554MiB 

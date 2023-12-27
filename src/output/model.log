@@ -1,0 +1,22 @@
+lstm_hidden = 7
+self.rnn = nn.LSTM(
+    input_size=hidden_size,
+    hidden_size=hidden_size,
+    num_layers=1,
+    bidirectional=False,  # 单LSTM
+    batch_first=True
+)
+self.birnn = nn.Sequential(
+    nn.LSTM(
+        input_size=hidden_size,
+        hidden_size=lstm_hidden,
+        num_layers=1,
+        bidirectional=True,  # 双LSTM
+        batch_first=True  # 指示第一维是batch
+    )
+)
+# 用Linear调整形状
+self.rnn_linear = nn.Linear(in_features=lstm_hidden*2, out_features=7)
+
+batch_encoder_items, _ = self.birnn(batch_encoder_items)
+batch_encoder_items = self.rnn_linear(batch_encoder_items)
